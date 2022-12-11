@@ -1,0 +1,46 @@
+﻿<Page x:Class="FourInRow2.View.StartPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FourInRow2.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="StartPage">
+
+    <Page.Resources>
+        
+    </Page.Resources>
+    <Grid>
+        <!--<Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Back button and page title -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="backButton" Margin="39,59,39,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
+                        
+                        VerticalAlignment="Top"
+                        AutomationProperties.Name="Back"
+                        AutomationProperties.AutomationId="BackButton"
+                        AutomationProperties.ItemType="Navigation Button"/>
+            <TextBlock x:Name="pageTitle" Text="Four In Row" Grid.Column="1" 
+                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
+        </Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Background="White" Width="300" Height="400">
+            <Button x:Name="twoPlayers" HorizontalAlignment="Center" Margin="0,100,0,20" Width="200" Background="Orange" Click="twoPlayers_Click">Two players</Button>
+            <Button x:Name="playWithComputerButtom"  HorizontalAlignment="Center" Width="200" Background="Orange" Click="playWithComputerButtom_Click">Play with computer</Button>
+            <!--<Button x:Name="toAnalyzeGame" HorizontalAlignment="Center" Click="toAnalyzeGame_Click" Margin="0,20,0,0" Width="200" Background="Orange">To analize position</Button>-->
+        </StackPanel>
+    </Grid>
+</Page>
